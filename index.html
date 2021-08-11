@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	localStorage.clear();
+    $('button').on('click', function(event) {
+		//console.log($("input[name='age']:checked").val());
+		var selectedAge = $("input[name='age']:checked").val();
+        localStorage.setItem('age', selectedAge);
+		document.location.href="page2.html";
+    });
+});
+</script>
+</head> 
+<body>
+<form action="">
+  <p>Please tell us your age?</p>
+  <div>
+    <input type="radio" id="ageChoice1"
+     name="age" value="Under 18">
+    <label for="ageChoice1">Under 18</label>
+
+    <input type="radio" id="ageChoice2"
+     name="age" value="18-30">
+    <label for="ageChoice2">18-30</label>
+
+    <input type="radio" id="ageChoice3"
+     name="age" value="31-45">
+    <label for="ageChoice3">31-45</label>
+	
+	<input type="radio" id="ageChoice4"
+     name="age" value="45-60">
+    <label for="ageChoice4">45-60</label>
+	
+	<input type="radio" id="ageChoice5"
+     name="age" value="60+">
+    <label for="ageChoice5">60+</label>
+  </div>
+  <div>
+    <button type="button">Submit</button>
+  </div>
+</form>
+
+</body>
+</html>

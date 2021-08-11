@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('button').on('click', function(event) {
+		likes = [];
+		$("input[name^='likes']").each(function() {
+		console.log($(this).val());
+			likes.push($(this).attr('data') + ":" + $(this).val());
+		});
+		console.log(likes);
+        localStorage.setItem('likes', likes);
+		document.location.href="results.html";
+    });
+	function checkStorage(){
+	  console.log(localStorage.getItem("animals"));
+	  animals = localStorage.getItem("animals").split(",");
+	  var wrapper = $(".input_fields_wrap");
+	  animals.forEach(function (item, index) {
+		console.log(item, index);
+		$(wrapper).append('<div>'+ item +': <input type="text" data="' + item +'" name="likes[]"/></div>');
+	  });
+	}
+	checkStorage();
+});
+</script>
+</head> 
+<body>
+<form action="">
+  <p>What do you like about these animals?</p>
+  <div class="input_fields_wrap"></div>
+  <div>
+    <button type="button">Get results</button>
+  </div>
+</form>
+
+</body>
+</html>

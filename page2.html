@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('button').on('click', function(event) {
+		console.log($('input[type="checkbox"]:checked'));
+		var animals = [];
+		$('input[type="checkbox"]:checked').each(function() {
+		   animals.push($(this).val());
+		});
+
+        localStorage.setItem('animals', animals);
+		document.location.href="page3.html";
+    });
+	function checkStorage(){
+	  console.log(localStorage.getItem("age")); 
+	}
+	checkStorage();
+});
+</script>
+</head> 
+<body>
+<form action="">
+  <p>From the following list,which of these animals is your favourite?</p>
+  <div>
+    <input type="checkbox" id="animalChoice1"
+     name="animal" value="Rabbit">
+    <label for="animalChoice1">Rabbit</label>
+
+    <input type="checkbox" id="animalChoice2"
+     name="animal" value="Cat">
+    <label for="animalChoice2">Cat</label>
+
+    <input type="checkbox" id="animalChoice3"
+     name="animal" value="Dog">
+    <label for="animalChoice2">Dog</label>
+	
+	<input type="checkbox" id="animalChoice4"
+     name="animal" value="Goldfish">
+    <label for="animalChoice4">Goldfish</label>
+  </div>
+  <div>
+    <button type="button">Submit</button>
+  </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	var wrapper = $(".input_fields_wrap");
+	const items = { ...localStorage };
+	$(wrapper).append('<div>'+ JSON.stringify(items) +'</div>');
+	console.log(items);
+});
+</script>
+</head> 
+<body>
+<form action="">
+  <p>Survey Results</p>
+  <div class="input_fields_wrap"></div>
+</form>
+
+</body>
+</html>
