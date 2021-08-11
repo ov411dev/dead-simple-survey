@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$.getJSON('api/survey_config_1.json', (data) => {
 		console.log(data);
 	});
-    $('button').on('click', function(event) {
+    	$('button').on('click', function(event) {
 		//console.log($("input[name='age']:checked").val());
 		var selectedAge = $("input[name='age']:checked").val();
         localStorage.setItem('age', selectedAge);
